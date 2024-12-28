@@ -1,7 +1,7 @@
 <?php
 include_once '../config/db.php';
 
-$query = "SELECT id, file_name, file_path, uploaded_at FROM pricelist";
+$query = "SELECT * FROM pricelist";
 $result = $conn->query($query);
 
 if ($result) {
