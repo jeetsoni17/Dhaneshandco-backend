@@ -14,10 +14,11 @@ if ($result->num_rows > 0) {
 
     // Check if the file exists
     if (file_exists($file)) {
+        $fileNameWithoutExtension = pathinfo($row['file_path'], PATHINFO_FILENAME);
         // Set headers to initiate the file download
         header('Content-Description: File Transfer');
         header('Content-Type: application/octet-stream');
-        header('Content-Disposition: attachment; filename="' . $row['file_name'] . '"');
+        header('Content-Disposition: attachment; filename="' . $fileNameWithoutExtension . '"');
         header('Content-Length: ' . filesize($file));
         readfile($file);
         exit;
