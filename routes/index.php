@@ -7,6 +7,10 @@ $request = $_GET['endpoint'] ?? null;
 
 // Include the necessary API file based on the endpoint
 switch ($request) {
+    case 'pricelist':
+        include_once '../api/pricelist.php';
+        break;
+
     case 'products':
         include_once '../api/products.php';
         break;
@@ -15,14 +19,14 @@ switch ($request) {
         include_once '../api/categories.php';
         break;
 
-    case 'pricelist':
-        include_once '../api/pricelist.php';
-        break;
-
     case 'subcategories':
         include_once '../api/subcategories.php';
         break;
-
+        
+    case 'sub_subcategories':
+        include_once '../api/sub_subcategories.php';
+        break;
+    
     case 'product': // Added case for fetching a single product by ID
         include_once '../api/products.php'; // Make sure you have a product.php file
         break;
