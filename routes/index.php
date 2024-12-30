@@ -27,8 +27,12 @@ switch ($request) {
         include_once '../api/sub_subcategories.php';
         break;
     
+    case 'download-pdf': 
+        include_once '../api/download.php'; 
+        break;
+
     case 'product': // Added case for fetching a single product by ID
-        include_once '../api/products.php'; // Make sure you have a product.php file
+        include_once '../api/products.php'; 
         break;
 
     default:

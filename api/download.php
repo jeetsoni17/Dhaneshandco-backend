@@ -1,11 +1,5 @@
 <?php
-// Database connection
-$conn = new mysqli("154.41.233.204", "u723981255_jeet", "Dhaneshco@123", "u723981255_dhanesh_db");
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include_once '../config/db.php';
 
 // Get the file ID from the request
 $id = intval($_GET['id']);
