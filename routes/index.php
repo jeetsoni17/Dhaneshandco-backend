@@ -27,7 +27,7 @@ switch ($request) {
         include_once '../api/sub_subcategories.php';
         break;
     
-    case 'download-pdf': 
+    case 'download_pdf': 
         include_once '../api/download.php'; 
         break;
 
