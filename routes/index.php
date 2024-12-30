@@ -20,9 +20,9 @@ switch ($request) {
         break;
 
     case 'subcategories':
-        include_once '../api/subcategories.php';
+        include_once '../api/subcategories.php'; 
         break;
-        
+
     case 'sub_subcategories':
         include_once '../api/sub_subcategories.php';
         break;
