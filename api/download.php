@@ -1,11 +1,5 @@
 <?php
-// Database connection
-$conn = new mysqli("154.41.233.204", "u723981255_jeet", "Dhaneshco@123", "u723981255_dhanesh_db");
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include_once '../config/db.php';
 
 // Get the file ID from the request
 $id = intval($_GET['id']);
@@ -20,10 +14,11 @@ if ($result->num_rows > 0) {
 
     // Check if the file exists
     if (file_exists($file)) {
+        $fileNameWithoutExtension = pathinfo($row['file_path'], PATHINFO_FILENAME);
         // Set headers to initiate the file download
         header('Content-Description: File Transfer');
         header('Content-Type: application/octet-stream');
-        header('Content-Disposition: attachment; filename="' . $row['file_name'] . '"');
+        header('Content-Disposition: attachment; filename="' . $fileNameWithoutExtension . '"');
         header('Content-Length: ' . filesize($file));
         readfile($file);
         exit;
