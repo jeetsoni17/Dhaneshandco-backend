@@ -35,6 +35,10 @@ switch ($request) {
         include_once '../api/products.php'; 
         break;
 
+    case 'search': 
+        include_once '../api/products_search.php'; // We will create this file for handling search
+        break;
+        
     default:
         http_response_code(404);
         echo json_encode(["error" => "Endpoint not found"]);
