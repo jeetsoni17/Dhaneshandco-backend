@@ -1,6 +1,6 @@
 <?php
 // Database connection details 
-$host = '154.41.233.204'; 
+$host = 'localhost'; // or '154.41.233.204' (earlier this was used)
 $user = 'u723981255_jeet'; 
 $password = 'Dhaneshco@123';
 $database = 'u723981255_dhanesh_db'; 
